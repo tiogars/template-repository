@@ -38,7 +38,8 @@ to its current completion status.
   link, creation date, update date, tags, and share action.
 - [x] Dashboard page composing cards into a responsive grid.
 - [x] Repository count KPI displayed on the dashboard.
-- [x] Native share with URL-copy fallback.
+- [x] Native share with URL-copy fallback; clipboard copy confirmed via
+  Snackbar feedback.
 
 ## Phase 4: Tag Management and Filtering Readiness — Complete
 

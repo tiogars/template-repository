@@ -37,6 +37,14 @@ strengthen the project beyond its current state.
 
 ## User Experience
 
+- The share action on each repository card now routes through the
+  controller and uses the existing Snackbar feedback system.
+  When `navigator.share` is available (e.g., mobile browsers), the
+  native share sheet is opened. When only the Clipboard API is
+  available, the URL is copied and a "URL copied to clipboard."
+  confirmation is shown. If neither API is supported, an error
+  message is shown. Previously, the clipboard fallback was silent
+  and any share error was discarded.
 - The tag filter on the dashboard resets when the page re-mounts. If filtering
   is a frequent action, persisting `selectedTagIds` in `UserPreferences` would
   preserve the user's last filter across sessions.

@@ -12,6 +12,7 @@ interface DashboardPageProps {
   selectedTagIds: string[];
   onEditTemplate: (template: RepositoryTemplate) => void;
   onDeleteTemplate: (template: RepositoryTemplate) => void;
+  onShareTemplate: (url: string) => void;
   onToggleTagFilter: (tagId: string) => void;
   onClearTagFilter: () => void;
 }
@@ -24,6 +25,7 @@ export function DashboardPage({
   selectedTagIds,
   onEditTemplate,
   onDeleteTemplate,
+  onShareTemplate,
   onToggleTagFilter,
   onClearTagFilter,
 }: Readonly<DashboardPageProps>) {
@@ -76,6 +78,7 @@ export function DashboardPage({
                 tags={tags}
                 onEdit={onEditTemplate}
                 onDelete={onDeleteTemplate}
+                onShare={onShareTemplate}
               />
             </Grid>
           ))}
