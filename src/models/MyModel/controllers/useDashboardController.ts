@@ -52,7 +52,7 @@ export interface DashboardController {
   openTagDialog: () => void;
   closeTagDialog: () => void;
   clearFeedback: () => void;
-  shareRepositoryTemplate: (url: string) => Promise<void>;
+  shareRepositoryTemplate: (url: string, title: string) => Promise<void>;
   toggleTagFilter: (tagId: string) => void;
   clearTagFilter: () => void;
   saveRepositoryTemplate: (input: NewRepositoryTemplateInput) => Promise<void>;
@@ -124,21 +124,28 @@ export function useDashboardController(): DashboardController {
     ),
     feedback,
     clearFeedback: () => setFeedback(null),
-    shareRepositoryTemplate: async (url) => {
-      try {
-        if (navigator.share) {
-          await navigator.share({ url });
+    shareRepositoryTemplate: async (url, title) => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, url });
           return;
+        } catch (error) {
+          if (error instanceof DOMException && error.name === 'AbortError') {
+            return;
+          }
+          // Fall through to clipboard fallback on other errors
         }
+      }
+      try {
         if (navigator.clipboard) {
           await navigator.clipboard.writeText(url);
           setFeedback({ message: 'URL copied to clipboard.', severity: 'success' });
           return;
         }
-        setFeedback({ message: 'Sharing is not supported in this browser.', severity: 'error' });
       } catch {
-        setFeedback({ message: 'Failed to share the URL.', severity: 'error' });
+        // Fall through to unsupported message
       }
+      setFeedback({ message: 'Sharing is not supported in this browser.', severity: 'error' });
     },
     selectedTagIds,
     toggleTagFilter: (tagId) => {
