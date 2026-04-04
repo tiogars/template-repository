@@ -12,17 +12,17 @@ to its current completion status.
 - [x] Vitest configured and running.
 - [x] Shared MUI theme with dark and light mode support.
 - [x] Application shell with header, footer, and dashboard page.
-- [x] `MyModel` directory structure and component folder convention in place.
+- [x] `AppData` directory structure and component folder convention in place.
 
 ## Phase 2: Domain Model and Persistence — Complete
 
-- [x] TypeScript domain types defined in `src/models/MyModel/types/domain.ts`
+- [x] TypeScript domain types defined in `src/models/AppData/types/domain.ts`
   (`RepositoryTemplate`, `Tag`, `BackupMetadata`, `UserPreferences`,
   `AppDataSet`).
 - [x] `AppRepository` interface defined in
-  `src/models/MyModel/repositories/appRepository.ts`.
+  `src/models/AppData/repositories/appRepository.ts`.
 - [x] IndexedDB implementation in
-  `src/models/MyModel/repositories/indexedDbAppRepository.ts`.
+  `src/models/AppData/repositories/indexedDbAppRepository.ts`.
 - [x] Default JSON seed loaded from
   `src/assets/defaultRepositoryTemplates.json`.
 - [x] Seed applied only on first launch; subsequent reloads restore persisted
@@ -45,7 +45,7 @@ to its current completion status.
 
 - [x] `TagDialog` component supporting tag creation, rename, and deletion.
 - [x] Tag service functions (`addTag`, `updateTag`, `deleteTag`) implemented
-  in `src/models/MyModel/services/appDataService.ts`.
+  in `src/models/AppData/services/appDataService.ts`.
 - [x] Tag assignment integrated into the repository template form.
 - [x] Tags displayed as chips on repository cards.
 - [x] Tag filter chips on the dashboard with multi-select and clear actions.

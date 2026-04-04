@@ -15,7 +15,7 @@ strengthen the project beyond its current state.
 
 ## Testing
 
-- The `models/MyModel/services/appDataService.tests.ts` file covers the core
+- The `models/AppData/services/appDataService.tests.ts` file covers the core
   service functions. Additional integration tests that exercise the full
   controller (`useDashboardController`) and the IndexedDB repository would
   improve confidence in persistence flows.

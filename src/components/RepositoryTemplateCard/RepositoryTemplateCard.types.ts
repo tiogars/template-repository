@@ -1,4 +1,4 @@
-import type { RepositoryTemplate, Tag } from '../../models/MyModel/types/domain';
+import type { RepositoryTemplate, Tag } from '../../models/AppData/types/domain';
 
 export interface RepositoryTemplateCardProps {
   template: RepositoryTemplate;

@@ -2,7 +2,7 @@ import { Chip, Grid, Stack, Typography } from '@mui/material';
 
 import { KpiCard } from '../../components/KpiCard';
 import { RepositoryTemplateCard } from '../../components/RepositoryTemplateCard';
-import type { RepositoryTemplate, Tag } from '../../models/MyModel/types/domain';
+import type { RepositoryTemplate, Tag } from '../../models/AppData/types/domain';
 
 interface DashboardPageProps {
   templates: RepositoryTemplate[];

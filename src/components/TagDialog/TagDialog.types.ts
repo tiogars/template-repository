@@ -1,4 +1,4 @@
-import type { Tag } from '../../models/MyModel/types/domain';
+import type { Tag } from '../../models/AppData/types/domain';
 
 export interface TagDialogProps {
   open: boolean;
