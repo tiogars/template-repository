@@ -4,7 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import './RepositoryTemplateDialog.css';
 import type { RepositoryTemplateDialogProps } from './RepositoryTemplateDialog.types';
-import type { NewRepositoryTemplateInput } from '../../models/MyModel/types/domain';
+import type { NewRepositoryTemplateInput } from '../../models/AppData/types/domain';
 
 const defaultValues: NewRepositoryTemplateInput = {
   name: '',

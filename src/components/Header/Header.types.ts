@@ -1,4 +1,4 @@
-import type { ThemeMode } from '../../models/MyModel/types/domain';
+import type { ThemeMode } from '../../models/AppData/types/domain';
 
 export interface HeaderProps {
   themeMode: ThemeMode;

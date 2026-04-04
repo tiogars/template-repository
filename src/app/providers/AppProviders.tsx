@@ -2,7 +2,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { ReactNode } from 'react';
 
 import { createAppTheme } from '../theme/createAppTheme';
-import type { ThemeMode } from '../../models/MyModel/types/domain';
+import type { ThemeMode } from '../../models/AppData/types/domain';
 
 interface AppProvidersProps {
   children: ReactNode;

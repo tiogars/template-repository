@@ -16,7 +16,7 @@ import { useState } from 'react';
 
 import './TagDialog.css';
 import type { TagDialogProps } from './TagDialog.types';
-import type { Tag } from '../../models/MyModel/types/domain';
+import type { Tag } from '../../models/AppData/types/domain';
 
 export function TagDialog({
   open,

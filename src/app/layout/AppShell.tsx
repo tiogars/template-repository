@@ -25,8 +25,8 @@ import { Header } from '../../components/Header';
 import { RepositoryTemplateDialog } from '../../components/RepositoryTemplateDialog';
 import { TagDialog } from '../../components/TagDialog';
 import { DashboardPage } from '../../features/dashboard';
-import type { DashboardController } from '../../models/MyModel/controllers/useDashboardController';
-import type { RepositoryTemplate } from '../../models/MyModel/types/domain';
+import type { DashboardController } from '../../models/AppData/controllers/useDashboardController';
+import type { RepositoryTemplate } from '../../models/AppData/types/domain';
 
 interface AppShellProps {
   controller: DashboardController;

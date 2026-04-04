@@ -1,6 +1,6 @@
 import { AppShell } from './layout/AppShell';
 import { AppProviders } from './providers/AppProviders';
-import { useDashboardController } from '../models/MyModel/controllers/useDashboardController';
+import { useDashboardController } from '../models/AppData/controllers/useDashboardController';
 
 export function App() {
   const controller = useDashboardController();

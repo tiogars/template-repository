@@ -2,7 +2,7 @@ import type {
   NewRepositoryTemplateInput,
   RepositoryTemplate,
   Tag,
-} from '../../models/MyModel/types/domain';
+} from '../../models/AppData/types/domain';
 
 export interface RepositoryTemplateDialogProps {
   open: boolean;
