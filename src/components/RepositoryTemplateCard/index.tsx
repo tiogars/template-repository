@@ -7,22 +7,12 @@ import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from 
 import './RepositoryTemplateCard.css';
 import type { RepositoryTemplateCardProps } from './RepositoryTemplateCard.types';
 
-async function shareTemplate(url: string) {
-  if (navigator.share) {
-    await navigator.share({ url });
-    return;
-  }
-
-  if (navigator.clipboard) {
-    await navigator.clipboard.writeText(url);
-  }
-}
-
 export function RepositoryTemplateCard({
   template,
   tags,
   onEdit,
   onDelete,
+  onShare,
 }: Readonly<RepositoryTemplateCardProps>) {
   const templateTags = tags.filter((tag) => template.tagIds.includes(tag.id));
   return (
@@ -78,7 +68,7 @@ export function RepositoryTemplateCard({
         <Button
           size="small"
           startIcon={<ShareOutlinedIcon />}
-          onClick={() => void shareTemplate(template.url)}
+          onClick={() => onShare(template.url)}
         >
           Share
         </Button>

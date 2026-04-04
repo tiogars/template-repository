@@ -99,6 +99,7 @@ export function AppShell({ controller }: Readonly<AppShellProps>) {
             selectedTagIds={controller.selectedTagIds}
             onEditTemplate={controller.openTemplateEditor}
             onDeleteTemplate={handleDeleteTemplate}
+            onShareTemplate={(url) => { void controller.shareRepositoryTemplate(url); }}
             onToggleTagFilter={controller.toggleTagFilter}
             onClearTagFilter={controller.clearTagFilter}
           />

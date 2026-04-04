@@ -22,6 +22,7 @@ const meta = {
     ],
     onEdit: () => undefined,
     onDelete: () => undefined,
+    onShare: () => undefined,
   },
 } satisfies Meta<typeof RepositoryTemplateCard>;
 

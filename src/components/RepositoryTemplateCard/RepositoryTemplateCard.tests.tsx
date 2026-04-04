@@ -7,6 +7,7 @@ describe('RepositoryTemplateCard', () => {
   it('renders the repository name', () => {
     const onEdit = vi.fn();
     const onDelete = vi.fn();
+    const onShare = vi.fn();
 
     render(
       <RepositoryTemplateCard
@@ -24,6 +25,7 @@ describe('RepositoryTemplateCard', () => {
         tags={[{ id: 'tag-1', label: 'TypeScript', color: '#3178c6' }]}
         onEdit={onEdit}
         onDelete={onDelete}
+        onShare={onShare}
       />,
     );
 
@@ -34,6 +36,7 @@ describe('RepositoryTemplateCard', () => {
   it('calls edit and delete handlers', () => {
     const onEdit = vi.fn();
     const onDelete = vi.fn();
+    const onShare = vi.fn();
 
     const view = render(
       <RepositoryTemplateCard
@@ -51,6 +54,7 @@ describe('RepositoryTemplateCard', () => {
         tags={[]}
         onEdit={onEdit}
         onDelete={onDelete}
+        onShare={onShare}
       />,
     );
 
@@ -59,5 +63,36 @@ describe('RepositoryTemplateCard', () => {
 
     expect(onEdit).toHaveBeenCalledTimes(1);
     expect(onDelete).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls share handler with template URL when Share is clicked', () => {
+    const onEdit = vi.fn();
+    const onDelete = vi.fn();
+    const onShare = vi.fn();
+
+    const view = render(
+      <RepositoryTemplateCard
+        template={{
+          id: 'template-1',
+          name: 'tiogars/template-repository',
+          url: 'https://github.com/tiogars/template-repository',
+          description: 'Reference repository template scaffold.',
+          createdAt: '2026-01-01T00:00:00.000Z',
+          updatedAt: '2026-04-04T00:00:00.000Z',
+          tagIds: [],
+          isSeeded: true,
+          isVisible: true,
+        }}
+        tags={[]}
+        onEdit={onEdit}
+        onDelete={onDelete}
+        onShare={onShare}
+      />,
+    );
+
+    fireEvent.click(within(view.container).getByRole('button', { name: 'Share' }));
+
+    expect(onShare).toHaveBeenCalledTimes(1);
+    expect(onShare).toHaveBeenCalledWith('https://github.com/tiogars/template-repository');
   });
 });

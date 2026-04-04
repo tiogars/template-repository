@@ -5,4 +5,5 @@ export interface RepositoryTemplateCardProps {
   tags: Tag[];
   onEdit: (template: RepositoryTemplate) => void;
   onDelete: (template: RepositoryTemplate) => void;
+  onShare: (url: string) => void;
 }
