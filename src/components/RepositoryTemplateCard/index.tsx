@@ -68,7 +68,7 @@ export function RepositoryTemplateCard({
         <Button
           size="small"
           startIcon={<ShareOutlinedIcon />}
-          onClick={() => onShare(template.url)}
+          onClick={() => onShare(template.url, template.name)}
         >
           Share
         </Button>

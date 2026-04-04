@@ -93,6 +93,6 @@ describe('RepositoryTemplateCard', () => {
     fireEvent.click(within(view.container).getByRole('button', { name: 'Share' }));
 
     expect(onShare).toHaveBeenCalledTimes(1);
-    expect(onShare).toHaveBeenCalledWith('https://github.com/tiogars/template-repository');
+    expect(onShare).toHaveBeenCalledWith('https://github.com/tiogars/template-repository', 'tiogars/template-repository');
   });
 });

@@ -12,7 +12,7 @@ interface DashboardPageProps {
   selectedTagIds: string[];
   onEditTemplate: (template: RepositoryTemplate) => void;
   onDeleteTemplate: (template: RepositoryTemplate) => void;
-  onShareTemplate: (url: string) => void;
+  onShareTemplate: (url: string, title: string) => void;
   onToggleTagFilter: (tagId: string) => void;
   onClearTagFilter: () => void;
 }
