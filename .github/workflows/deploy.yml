@@ -66,6 +66,35 @@ jobs:
           name: docs-site
           path: site_output/
 
+  build-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Storybook
+        run: pnpm run build-storybook
+
+      - name: Upload Storybook artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook
+          path: storybook-static/
+
   build-slides:
     runs-on: ubuntu-latest
     steps:
@@ -90,7 +119,7 @@ jobs:
           path: presentation
 
   deploy:
-    needs: [build-app, build-docs, build-slides]
+    needs: [build-app, build-docs, build-slides, build-storybook]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -113,6 +142,12 @@ jobs:
         with:
           name: slides
           path: site/presentation/
+
+      - name: Download Storybook
+        uses: actions/download-artifact@v4
+        with:
+          name: storybook
+          path: site/storybook/
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
