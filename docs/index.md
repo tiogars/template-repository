@@ -1,3 +1,15 @@
-# My project
+# Template Repository Documentation
 
-This is my project. It does many things.
+This documentation defines the baseline specification for a basic
+webapp built from this repository template.
+
+## Sections
+
+- [1. Specification](1-specification/index.md)
+- [2. Delivery](2-delivery/index.md)
+
+## Current Scope
+
+The current documented scope covers a React-based dashboard used to
+manage favorite GitHub repository templates, their tags, and local
+backup operations.

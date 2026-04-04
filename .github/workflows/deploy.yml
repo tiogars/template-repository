@@ -1,0 +1,127 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build webapp
+        run: pnpm run build
+
+      - name: Upload webapp artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: webapp
+          path: dist/
+
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build docs with Docker
+        run: |
+          docker run \
+            -v ${{ github.workspace }}/docs:/server/docs \
+            -v ${{ github.workspace }}/mkdocs.yml:/server/mkdocs.yml \
+            -v ${{ github.workspace }}/site_output:/server/site_output \
+            -w /server/ \
+            ghcr.io/tiogars/mkdocs-docker-image:latest \
+            build
+
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-site
+          path: site_output/
+
+  build-slides:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Build HTML slide deck
+        run: marp presentation/index.md -o presentation/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: slides
+          path: presentation
+
+  deploy:
+    needs: [build-app, build-docs, build-slides]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download webapp
+        uses: actions/download-artifact@v4
+        with:
+          name: webapp
+          path: site/
+
+      - name: Download docs
+        uses: actions/download-artifact@v4
+        with:
+          name: docs-site
+          path: site/docs/
+
+      - name: Download slides
+        uses: actions/download-artifact@v4
+        with:
+          name: slides
+          path: site/presentation/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

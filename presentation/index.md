@@ -7,93 +7,74 @@ marp: true
 backgroundImage: url('./images/tiogars-background.svg')
 ---
 
-# **Marp** - Markdown Presentation Ecosystem
+# **template-repository** - Template repository to create a boilerplate application
 
 <!-- Presenter notes: Introduce yourself and the topic of the presentation.
-Explain that Marp is a tool for creating presentations using Markdown, and that
-you'll be covering its features, usage, and tools. -->
+Explain that this presentation will cover the template repository and its
+features. -->
 
 ---
 
-## What is Marp?
+## What is template-repository?
 
-Marp transforms Markdown into beautiful slide decks. It is open-source, fast,
-and supports modern presentation features.
+Template-repository is a boilerplate application template that helps you
+quickly set up a new project with a predefined structure and best practices.
 
-<!-- Presenter notes: Explain that Marp is a powerful tool for creating
-presentations using Markdown. It allows you to focus on content while it takes
-care of the formatting and design. Mention that it's open-source, which means
-it's free to use and has a community of contributors. Highlight that it's fast
-and supports modern features like custom themes, speaker notes, and various
-export formats. -->
+<!-- Presenter notes: Explain that template-repository is a powerful tool for creating
+boilerplate applications. It allows you to focus on building features while it takes
+care of the project structure and best practices. Mention that it's
+open-source, which means it's free to use and has a community of contributors.
+Highlight that it provides a solid foundation
+for new projects, ensuring consistency and reducing setup time. -->
 
 ---
 
 ## Key Features
 
-- **Write slides in Markdown**
-- **Live preview**
-- **Custom themes**
-- **Export to PDF, PPTX, HTML, images**
-- **Speaker notes**
+- **Predefined project structure**
+- **Best practices integration**
+- **Open-source and community-driven**
+- **Rapid project setup**
+
 - **Integrates with VS Code, CLI, and web**
 
-<!-- Presenter notes: Highlight the key features of Marp. Emphasize the ease
-of writing slides in Markdown, the convenience of live preview, and the ability
-to customize themes. Mention the various export options and the support for
-speaker notes. Finally, point out that Marp integrates well with popular tools
-like VS Code and has a web version for easy access. -->
+<!-- Presenter notes: Highlight the key features of template-repository.
+Emphasize the ease of setting up a new project with a predefined structure,
+the integration of best practices, and the support from the open-source
+community. Mention the various tools available for
+development, including VS Code, CLI, and web interfaces. -->
 
 ---
 
 ## Usage
 
-1. **Install Marp CLI**: `npm install -g @marp-team/marp-cli`
-2. **Write slides**: Create a `.md` file with Marp frontmatter (`marp: true`)
-3. **Preview**: Use Marp for VS Code or the CLI for live preview
-4. **Export**: Convert Markdown to PDF, PPTX, HTML, or images
+1. **Install template-repository**: `npm install -g template-repository`
+2. **Create a new project**: `template-repository create my-project`
+3. **Navigate to the project**: `cd my-project`
+4. **Start development**: `npm start`
 
-<!-- Presenter notes: Walk through the basic usage of Marp. Start with
-installing the Marp CLI using npm. Then, explain how to write slides by
-creating a Markdown file and including the Marp frontmatter. Next, show how to
-preview the slides using either the VS Code extension or the CLI. Finally,
-demonstrate how to export the slides into different formats. -->
+<!-- Presenter notes: Walk through the basic usage of template-repository.
+Start with installing the template-repository CLI using npm. Then, explain
+how to create a new project
+using the CLI. Next, show how to navigate to the project directory. Finally, demonstrate
+how to start development using the provided npm scripts. -->
 
 ---
 
 ### Usage Example
 
-```markdown
----
-marp: true
-title: My Presentation
----
-
-# Slide 1
-
-This is the first slide.
-
----
-
-# Slide 2
-
-This is the second slide.
-
-```
+<!-- Presenter notes: TODO add a screenshot to explain the usage example. -->
 
 ---
 
 ## Tools
 
-- **Marp CLI**: Command-line tool for conversion and export
-- **Marp for VS Code**: Extension for live preview and export
-- **Marp Web**: Online editor at [marp.app](https://marp.app/)
-
 <!-- Presenter notes: Introduce the different tools available for working with
-Marp. The Marp CLI is a powerful command-line tool for converting Markdown to
-various formats. The Marp for VS Code extension provides a seamless experience
-for writing and previewing slides directly in the editor. Finally, the Marp Web
-editor allows you to create and edit presentations online without needing to
+template-repository. The CLI is a powerful command-line tool for creating and
+managing projects.
+The VS Code extension provides a seamless experience for developing within the editor.
+Finally, the web interface allows you to manage projects online without
+needing to
 install anything. -->
 
 ---
@@ -105,27 +86,12 @@ install anything. -->
 - **HTML**: Standalone web presentations
 - **PNG/JPG**: Slide images
 
-<!-- Presenter notes: Explain the different export formats supported by Marp.
-PDF is ideal for printing or sharing static slides. PPTX allows you to open and
-edit your presentation in Microsoft PowerPoint. HTML exports create standalone
-web presentations that can be viewed in any browser. Finally, PNG and JPG
-exports are useful for sharing individual slides as images. -->
+<!-- Presenter notes: TODO explain what this template repository will produce. -->
 
 ---
 
 ## Learn More
 
-- [Official Website](https://marp.app/)
-- [Documentation](https://marp.app/docs/)
-- [GitHub](https://github.com/marp-team/marp)
-- [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-- [Style directive](https://marpit.marp.app/directives)
-
-<!-- Presenter notes:
-To dive deeper into Marp, check out these resources:
-- The official website and documentation provide comprehensive guides and examples.
-- The GitHub repository is where you can find the source code and contribute.
-- The VS Code extension page has installation instructions and reviews.
-- The style directive documentation explains how to customize your slides even further.
-Thank you for your attention! I'm happy to answer any questions.
+<!-- Presenter notes: TODO add links to documentation, GitHub repository,
+and community resources for template-repository.
 -->
