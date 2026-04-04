@@ -6,11 +6,11 @@ The implementation should follow these layers inside `src`:
 
 - `app`: application bootstrap, routes, providers, theme setup, and
   global layout.
-- `models/MyModel/controllers`: orchestrates user actions and UI use
-  cases.
-- `models/MyModel/services`: business rules for templates, tags,
+- `models/<ModelName>/controllers`: orchestrates user actions and UI
+  use cases.
+- `models/<ModelName>/services`: business rules for templates, tags,
   import, export, backup freshness, and sharing.
-- `models/MyModel/repositories`: IndexedDB access and seed loading.
+- `models/<ModelName>/repositories`: IndexedDB access and seed loading.
 - `components`: reusable UI building blocks following the repository
   component convention.
 - `features`: feature-oriented composition for dashboard, template
@@ -19,6 +19,11 @@ The implementation should follow these layers inside `src`:
 - `tests`: shared test utilities and integration helpers.
 
 ## Suggested Initial Folder Layout
+
+The `models/` directory contains **one folder per domain model**. Each
+model folder groups its own controllers, services, repositories, and
+types. Replace `<ModelName>` with the actual domain model name (for
+example `AppData` or `UserProfile`).
 
 ```text
 src/
@@ -41,7 +46,12 @@ src/
     backup/
     preferences/
   models/
-    MyModel/
+    <ModelName>/
+      controllers/
+      services/
+      repositories/
+      types/
+    <AnotherModel>/
       controllers/
       services/
       repositories/
