@@ -14,6 +14,7 @@ docs_dir: docs
 
 nav:
   - Home: index.md
+  - Overview: 0-overview/index.md
   - Specification:
       - Overview: 1-specification/index.md
       - Basic Webapp:
