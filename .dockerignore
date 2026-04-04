@@ -1,0 +1,8 @@
+# Exclude GitHub workflows and other unnecessary files
+.github/
+.git/
+*.md
+*.prompt.md
+__pycache__/
+*.pyc
+# Add more patterns as needed
