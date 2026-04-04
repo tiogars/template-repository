@@ -8,6 +8,7 @@ webapp built from this repository template.
 - [1. Specification](1-specification/index.md)
 - [2. Delivery](2-delivery/index.md)
 - [3. Review](3-review/index.md)
+- [4. User Manual](4-user-manual/index.md)
 
 ## Current Scope
 
