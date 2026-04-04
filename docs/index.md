@@ -7,9 +7,10 @@ webapp built from this repository template.
 
 - [1. Specification](1-specification/index.md)
 - [2. Delivery](2-delivery/index.md)
+- [3. Review](3-review/index.md)
 
 ## Current Scope
 
 The current documented scope covers a React-based dashboard used to
-manage favorite GitHub repository templates, their tags, and local
+manage favourite GitHub repository templates, their tags, and local
 backup operations.
