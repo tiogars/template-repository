@@ -12,8 +12,8 @@ export backups.
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) 20 or later
-- [pnpm](https://pnpm.io/) 9 or later
+- [Node.js](https://nodejs.org/) 24 or later
+- [pnpm](https://pnpm.io/) 10 or later
 
 ## Quick start
 
