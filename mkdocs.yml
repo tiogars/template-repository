@@ -36,7 +36,8 @@ nav:
               - Theme Palette: 1-specification/1.1-basic-webapp/1.1.3-user-experience/1.1.3.1-theme-palette/index.md
           - Technical Stack: 1-specification/1.1-basic-webapp/1.1.4-technical-stack/index.md
           - Technical Methodology: 1-specification/1.1-basic-webapp/1.1.5-technical-methodology/index.md
-          - Acceptance Criteria: 1-specification/1.1-basic-webapp/1.1.6-acceptance-criteria/index.md
+          - Coding Conventions: 1-specification/1.1-basic-webapp/1.1.6-coding-conventions/index.md
+          - Acceptance Criteria: 1-specification/1.1-basic-webapp/1.1.7-acceptance-criteria/index.md
   - Delivery:
       - Overview: 2-delivery/index.md
       - Basic Webapp Implementation Plan:
