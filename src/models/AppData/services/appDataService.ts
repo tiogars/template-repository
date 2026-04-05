@@ -42,7 +42,7 @@ function sanitizeTemplate(value: unknown): RepositoryTemplate | null {
     return null;
   }
 
-  const { id, name, url, description, createdAt, updatedAt, tagIds } = value;
+  const { id, name, url, description, templateName, templateOwner, createdAt, updatedAt, tagIds } = value;
 
   if (
     typeof id !== 'string' ||
@@ -60,6 +60,8 @@ function sanitizeTemplate(value: unknown): RepositoryTemplate | null {
     name,
     url,
     description,
+    templateName: typeof templateName === 'string' ? templateName : '',
+    templateOwner: typeof templateOwner === 'string' ? templateOwner : '',
     createdAt,
     updatedAt,
     tagIds: Array.isArray(tagIds)
@@ -234,6 +236,8 @@ export function addRepositoryTemplate(
     name: input.name,
     url: input.url,
     description: input.description,
+    templateName: input.templateName,
+    templateOwner: input.templateOwner,
     createdAt: now,
     updatedAt: now,
     tagIds: input.tagIds,
@@ -266,6 +270,8 @@ export function updateRepositoryTemplate(
         name: input.name,
         url: input.url,
         description: input.description,
+        templateName: input.templateName,
+        templateOwner: input.templateOwner,
         tagIds: input.tagIds,
         updatedAt: now,
       };

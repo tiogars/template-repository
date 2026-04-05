@@ -6,6 +6,8 @@ export interface RepositoryTemplate {
   name: string;
   url: string;
   description: string;
+  templateName: string;
+  templateOwner: string;
   createdAt: string;
   updatedAt: string;
   tagIds: string[];
@@ -39,5 +41,7 @@ export interface NewRepositoryTemplateInput {
   name: string;
   url: string;
   description: string;
+  templateName: string;
+  templateOwner: string;
   tagIds: string[];
 }

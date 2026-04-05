@@ -28,6 +28,8 @@ describe('RepositoryTemplateDialog', () => {
           name: 'tiogars/template-repository',
           url: 'https://github.com/tiogars/template-repository',
           description: 'Reference repository template scaffold.',
+          templateName: 'template-repository',
+          templateOwner: 'tiogars',
           createdAt: '2026-01-01T00:00:00.000Z',
           updatedAt: '2026-04-04T00:00:00.000Z',
           tagIds: [],
