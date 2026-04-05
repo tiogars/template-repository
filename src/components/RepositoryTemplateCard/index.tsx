@@ -1,5 +1,6 @@
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from '@mui/material';
@@ -64,6 +65,15 @@ export function RepositoryTemplateCard({
           rel="noreferrer"
         >
           Open repository
+        </Button>
+        <Button
+          size="small"
+          startIcon={<NoteAddOutlinedIcon />}
+          href={`https://github.com/new?template_name=${encodeURIComponent(template.templateName)}&template_owner=${encodeURIComponent(template.templateOwner)}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Use template
         </Button>
         <Button
           size="small"
