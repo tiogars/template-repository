@@ -1,8 +1,34 @@
-# Exclude GitHub workflows and other unnecessary files
-.github/
+# Exclude files and directories that are not needed in the Docker build context
+
+# Version control
 .git/
+.github/
+
+# Dependencies (installed fresh inside the container)
+node_modules/
+
+# Build artifacts
+dist/
+storybook-static/
+coverage/
+site_output/
+
+# Documentation sources (not needed in the webapp image)
+docs/
+mkdocs.yml
+presentation/
+pdf_event_hook/
+
+# Markdown and config files not needed at runtime
 *.md
 *.prompt.md
+
+# Python cache
 __pycache__/
 *.pyc
-# Add more patterns as needed
+
+# Logs and environment files
+*.log
+.env
+.env.*
+!.env.example
