@@ -1,9 +1,9 @@
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
-import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
-import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from '@mui/material';
+import { Card, CardActions, CardContent, CardHeader, Chip, IconButton, Stack, Tooltip, Typography } from '@mui/material';
 
 import './RepositoryTemplateCard.css';
 import type { RepositoryTemplateCardProps } from './RepositoryTemplateCard.types';
@@ -18,9 +18,26 @@ export function RepositoryTemplateCard({
   const templateTags = tags.filter((tag) => template.tagIds.includes(tag.id));
   return (
     <Card sx={{ height: '100%' }}>
+      <CardHeader
+        title={template.name}
+        titleTypographyProps={{ variant: 'h6' }}
+        action={
+          <Stack direction="row">
+            <Tooltip title="Edit">
+              <IconButton size="small" onClick={() => onEdit(template)} aria-label="Edit">
+                <EditOutlinedIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Delete">
+              <IconButton size="small" color="error" onClick={() => onDelete(template)} aria-label="Delete">
+                <DeleteOutlineOutlinedIcon />
+              </IconButton>
+            </Tooltip>
+          </Stack>
+        }
+      />
       <CardContent>
         <Stack spacing={1.5}>
-          <Typography variant="h6">{template.name}</Typography>
           <Typography color="text.secondary">{template.description}</Typography>
           <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
             {template.isSeeded ? <Chip size="small" label="Seeded" color="primary" /> : null}
@@ -42,46 +59,37 @@ export function RepositoryTemplateCard({
         </Stack>
       </CardContent>
       <CardActions>
-        <Button
-          size="small"
-          startIcon={<EditOutlinedIcon />}
-          onClick={() => onEdit(template)}
-        >
-          Edit
-        </Button>
-        <Button
-          size="small"
-          color="error"
-          startIcon={<DeleteOutlineOutlinedIcon />}
-          onClick={() => onDelete(template)}
-        >
-          Delete
-        </Button>
-        <Button
-          size="small"
-          startIcon={<OpenInNewOutlinedIcon />}
-          href={template.url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open repository
-        </Button>
-        <Button
-          size="small"
-          startIcon={<NoteAddOutlinedIcon />}
-          href={`https://github.com/new?template_name=${encodeURIComponent(template.templateName)}&template_owner=${encodeURIComponent(template.templateOwner)}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Use template
-        </Button>
-        <Button
-          size="small"
-          startIcon={<ShareOutlinedIcon />}
-          onClick={() => onShare(template.url, template.name)}
-        >
-          Share
-        </Button>
+        <Tooltip title="Open repository">
+          <IconButton
+            size="small"
+            href={template.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open repository"
+          >
+            <GitHubIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Use template">
+          <IconButton
+            size="small"
+            href={`https://github.com/new?template_name=${encodeURIComponent(template.templateName)}&template_owner=${encodeURIComponent(template.templateOwner)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Use template"
+          >
+            <NoteAddOutlinedIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Share">
+          <IconButton
+            size="small"
+            onClick={() => onShare(template.url, template.name)}
+            aria-label="Share"
+          >
+            <ShareOutlinedIcon />
+          </IconButton>
+        </Tooltip>
       </CardActions>
     </Card>
   );
