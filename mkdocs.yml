@@ -46,6 +46,14 @@ nav:
       - Overview: 3-review/index.md
       - Implementation Status: 3-review/3.1-implementation-status/index.md
       - Open Points: 3-review/3.2-open-points/index.md
+  - User Manual:
+      - Overview: 4-user-manual/index.md
+      - Dashboard: 4-user-manual/4.1-dashboard/index.md
+      - Repository Templates: 4-user-manual/4.2-repository-templates/index.md
+      - Tag Management: 4-user-manual/4.3-tag-management/index.md
+      - Import and Export: 4-user-manual/4.4-import-export/index.md
+      - Header: 4-user-manual/4.5-header/index.md
+      - Floating Action Buttons: 4-user-manual/4.6-floating-action-buttons/index.md
 
 theme:
   custom_dir: docs/overrides
@@ -63,7 +71,7 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -80,7 +88,7 @@ theme:
     - toc.integrate
     - content.code.copy
     - content.action.edit
-    - content.action.view  
+    - content.action.view
 
 plugins:
   # https://ultrabug.github.io/mkdocs-static-i18n/
