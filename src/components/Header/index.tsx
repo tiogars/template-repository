@@ -30,13 +30,14 @@ export function Header({
           Template Repository Dashboard
         </Typography>
         <Tooltip title="Seeded favorite">
-          <Switch
-            checked={showSeededFavorite}
-            onChange={onToggleSeededFavorite}
-            size="small"
-            slotProps={{ input: { 'aria-label': 'Toggle seeded favorite' } }}
-            sx={{ display: { xs: 'flex', md: 'none' } }}
-          />
+          <Box component="span" sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
+            <Switch
+              checked={showSeededFavorite}
+              onChange={onToggleSeededFavorite}
+              size="small"
+              slotProps={{ input: { 'aria-label': 'Toggle seeded favorite' } }}
+            />
+          </Box>
         </Tooltip>
         <FormControlLabel
           control={<Switch checked={showSeededFavorite} onChange={onToggleSeededFavorite} />}
