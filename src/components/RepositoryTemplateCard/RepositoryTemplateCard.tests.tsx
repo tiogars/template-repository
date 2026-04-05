@@ -135,6 +135,6 @@ describe('RepositoryTemplateCard', () => {
       'https://github.com/new?template_name=template-repository&template_owner=tiogars',
     );
     expect(useTemplateLink).toHaveAttribute('target', '_blank');
-    expect(useTemplateLink).toHaveAttribute('rel', 'noreferrer');
+    expect(useTemplateLink).toHaveAttribute('rel', 'noopener noreferrer');
   });
 });
