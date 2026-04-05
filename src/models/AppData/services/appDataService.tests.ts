@@ -46,6 +46,8 @@ describe('appDataService', () => {
           name: 'imported/template',
           url: 'https://github.com/example/imported-template',
           description: 'Imported template',
+          templateName: 'imported-template',
+          templateOwner: 'example',
           createdAt: '2026-04-01T00:00:00.000Z',
           updatedAt: '2026-04-04T00:00:00.000Z',
           tagIds: [],
@@ -74,6 +76,8 @@ describe('appDataService', () => {
           name: 'imported/template',
           url: 'https://github.com/example/imported-template',
           description: 'Imported template',
+          templateName: 'imported-template',
+          templateOwner: 'example',
           createdAt: '2026-04-01T00:00:00.000Z',
           updatedAt: '2026-04-04T00:00:00.000Z',
           tagIds: [],
@@ -105,6 +109,8 @@ describe('appDataService', () => {
       name: 'updated/template',
       url: 'https://github.com/example/updated-template',
       description: 'Updated description',
+      templateName: 'updated-template',
+      templateOwner: 'example',
       tagIds: [],
     });
 
@@ -117,6 +123,8 @@ describe('appDataService', () => {
       name: 'extra/template',
       url: 'https://github.com/example/extra-template',
       description: 'Extra template',
+      templateName: 'extra-template',
+      templateOwner: 'example',
       tagIds: [],
     });
     const createdTemplateId = withExtraTemplate.templates[0].id;
@@ -144,6 +152,8 @@ describe('appDataService', () => {
       name: withTag.templates[0].name,
       url: withTag.templates[0].url,
       description: withTag.templates[0].description,
+      templateName: withTag.templates[0].templateName,
+      templateOwner: withTag.templates[0].templateOwner,
       tagIds: [tagId],
     });
 

@@ -10,6 +10,8 @@ const defaultValues: NewRepositoryTemplateInput = {
   name: '',
   url: '',
   description: '',
+  templateName: '',
+  templateOwner: '',
   tagIds: [],
 };
 
@@ -36,6 +38,8 @@ export function RepositoryTemplateDialog({
         name: template.name,
         url: template.url,
         description: template.description,
+        templateName: template.templateName,
+        templateOwner: template.templateOwner,
         tagIds: template.tagIds,
       });
       return;
@@ -99,6 +103,30 @@ export function RepositoryTemplateDialog({
                 fullWidth
                 multiline
                 minRows={3}
+              />
+            )}
+          />
+          <Controller
+            name="templateName"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                margin="normal"
+                label="Template name"
+                fullWidth
+              />
+            )}
+          />
+          <Controller
+            name="templateOwner"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                margin="normal"
+                label="Repository owner"
+                fullWidth
               />
             )}
           />
