@@ -21,3 +21,7 @@
   MUI theme configuration.
 - KPI panels, cards, modal forms, and Floating Action Buttons should
   form a cohesive dashboard experience.
+
+## Subsections
+
+- [1.1.3.1 Theme Palette](1.1.3.1-theme-palette/index.md)

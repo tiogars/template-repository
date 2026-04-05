@@ -29,7 +29,9 @@ nav:
               - Import and Export: 1-specification/1.1-basic-webapp/1.1.1-functional-specification/1.1.1.6-import-export/index.md
               - Footer: 1-specification/1.1-basic-webapp/1.1.1-functional-specification/1.1.1.7-footer/index.md
           - Data and Persistence: 1-specification/1.1-basic-webapp/1.1.2-data-and-persistence/index.md
-          - User Experience: 1-specification/1.1-basic-webapp/1.1.3-user-experience/index.md
+          - User Experience:
+              - Overview: 1-specification/1.1-basic-webapp/1.1.3-user-experience/index.md
+              - Theme Palette: 1-specification/1.1-basic-webapp/1.1.3-user-experience/1.1.3.1-theme-palette/index.md
           - Technical Stack: 1-specification/1.1-basic-webapp/1.1.4-technical-stack/index.md
           - Technical Methodology: 1-specification/1.1-basic-webapp/1.1.5-technical-methodology/index.md
           - Acceptance Criteria: 1-specification/1.1-basic-webapp/1.1.6-acceptance-criteria/index.md
