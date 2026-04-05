@@ -1,4 +1,44 @@
 services:
+
+  # ── Webapp ────────────────────────────────────────────────────────────────
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/tiogars/template-repository-webapp:latest
+    restart: unless-stopped
+
+    # Resource limits — this is a lightweight static-file service.
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 64M
+        reservations:
+          cpus: "0.05"
+          memory: 16M
+
+    ports:
+      - "3000:80"
+
+    # ── Traefik integration (uncomment to enable) ──────────────────────────
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.webapp.rule=Host(`app.example.com`)"
+    #   - "traefik.http.routers.webapp.entrypoints=websecure"
+    #   - "traefik.http.routers.webapp.tls.certresolver=letsencrypt"
+    #   - "traefik.http.services.webapp.loadbalancer.server.port=80"
+    # networks:
+    #   - traefik_public
+
+    # ── Tailscale integration (uncomment to enable) ───────────────────────
+    # Expose the container only on your Tailscale network by running a
+    # Tailscale sidecar and binding nginx to the Tailscale interface.
+    # network_mode: "service:tailscale"
+    # depends_on:
+    #   - tailscale
+
+  # ── MkDocs documentation ─────────────────────────────────────────────────
   mkdocs:
     image: ghcr.io/tiogars/mkdocs-docker-image:latest
     volumes:
@@ -9,3 +49,29 @@ services:
     command: ["serve","--dev-addr=0.0.0.0:8000"]
     ports:
       - "8000:8000"
+
+  # ── Tailscale sidecar (uncomment to enable) ───────────────────────────────
+  # tailscale:
+  #   image: tailscale/tailscale:latest
+  #   hostname: template-repository
+  #   environment:
+  #     - TS_AUTHKEY=${TS_AUTHKEY}
+  #     - TS_STATE_DIR=/var/lib/tailscale
+  #     - TS_USERSPACE=false
+  #   volumes:
+  #     - tailscale_state:/var/lib/tailscale
+  #     - /dev/net/tun:/dev/net/tun
+  #   cap_add:
+  #     - NET_ADMIN
+  #     - NET_RAW
+  #   restart: unless-stopped
+
+# ── Networks ────────────────────────────────────────────────────────────────
+# Uncomment the network below when using Traefik running in a separate stack.
+# networks:
+#   traefik_public:
+#     external: true
+
+# ── Volumes ─────────────────────────────────────────────────────────────────
+# volumes:
+#   tailscale_state:
