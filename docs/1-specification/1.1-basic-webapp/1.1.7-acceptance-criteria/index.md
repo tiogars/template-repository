@@ -1,4 +1,4 @@
-# 1.1.6 Acceptance Criteria
+# 1.1.7 Acceptance Criteria
 
 - A user can manage favorite repository templates from a modal form.
 - A user can manage tags and assign them to repository templates.
