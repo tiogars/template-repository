@@ -33,7 +33,7 @@
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
     "@vitejs/plugin-react": "^4.3.4",
-    "jsdom": "^26.0.0",
+    "jsdom": "^29.0.2",
     "markdownlint-cli": "^0.48.0",
     "storybook": "^8.6.12",
     "typescript": "^5.8.2",
