@@ -126,25 +126,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download webapp
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: webapp
           path: site/
 
       - name: Download docs
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: docs-site
           path: site/docs/
 
       - name: Download slides
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: slides
           path: site/presentation/
 
       - name: Download Storybook
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: storybook
           path: site/storybook/
