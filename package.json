@@ -32,7 +32,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^18.3.6",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^5.2.0",
     "jsdom": "^29.0.2",
     "markdownlint-cli": "^0.48.0",
     "storybook": "^8.6.12",
