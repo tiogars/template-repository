@@ -21,7 +21,7 @@
     "idb": "^8.0.2",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-hook-form": "^7.56.1"
+    "react-hook-form": "^7.73.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
